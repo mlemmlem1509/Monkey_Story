@@ -13,7 +13,6 @@ abstract class BaseRepository implements BaseRepositoryInterface
         $this->setModel();
     }
 
-    //lấy model tương ứng
     abstract public function getModel();
 
     /**
