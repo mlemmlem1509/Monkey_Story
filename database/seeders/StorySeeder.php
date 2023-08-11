@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Story;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StorySeeder extends Seeder
 {
@@ -13,6 +14,11 @@ class StorySeeder extends Seeder
      */
     public function run(): void
     {
-        Story::factory(10)->create();
+        DB::table('stories')->insert([
+            "name" => "Doraemon",
+            "authorName" => "Fujiko.F.Fujio",
+            "illustratorName" => "Fujiko.F.Fujio",
+            "thumbnail" => "mlem"
+        ]);
     }
 }

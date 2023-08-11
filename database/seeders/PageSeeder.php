@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Page;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PageSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class PageSeeder extends Seeder
      */
     public function run(): void
     {
-        Page::factory(10)->create();
+        DB::table('pages')->insert([
+            "pageNumber" => "1",
+            "background" => "mlemmlem"
+        ]);
     }
 }
