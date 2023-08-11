@@ -6,6 +6,7 @@ use App\Http\Controllers\API\PageContentController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\StoryController;
 use App\Http\Controllers\API\TextController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,3 +55,9 @@ Route::get('contents/{id}', [PageContentController::class, 'view']);
 Route::get('contents/{id}/edit', [PageContentController::class, 'edit']);
 Route::put('contents/{id}/edit', [PageContentController::class, 'update']);
 Route::delete('contents/{id}/delete', [PageContentController::class, 'delete']);
+
+Route::post('login', [UserController::class, 'login']);
+Route::group(['middleware' => 'auth:sanctum'], function(){
+   Route::get('user', [UserController::class, 'detail']);
+   Route::get('logout', [UserController::class, 'logout']);
+});
