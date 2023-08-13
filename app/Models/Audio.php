@@ -11,6 +11,8 @@ class Audio extends Model
 
     protected $table = 'audios';
 
+    protected $primaryKey = 'idAudio';
+
     protected $fillable = [
         'name',
         'path'

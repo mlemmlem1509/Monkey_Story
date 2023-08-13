@@ -2,6 +2,7 @@
 
 namespace App\Repositories\PageContentRepository;
 
+use App\Models\PageContent;
 use App\Repositories\BaseRepository;
 use App\Repositories\BaseRepositoryInterface;
 
@@ -9,6 +10,6 @@ class PageContentRepository extends BaseRepository implements BaseRepositoryInte
 {
     public function getModel()
     {
-        return \App\Models\PageContent::class;
+        return PageContent::class;
     }
 }

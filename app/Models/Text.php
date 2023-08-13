@@ -11,6 +11,7 @@ class Text extends Model
 
     protected $table = 'texts';
 
+    protected $primaryKey = 'idText';
     protected $fillable = [
         'name',
         'positionX',

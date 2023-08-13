@@ -11,6 +11,8 @@ class Page extends Model
 
     protected $table = 'pages';
 
+    protected $primaryKey = 'idPage';
+
     protected $fillable = [
         'pageNumber',
         'background'

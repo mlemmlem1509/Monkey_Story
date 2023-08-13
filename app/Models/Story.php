@@ -11,6 +11,7 @@ class Story extends Model
 
     protected $table = 'stories';
 
+    protected $primaryKey = 'idStory';
     protected $fillable = [
         'name',
         'authorName',

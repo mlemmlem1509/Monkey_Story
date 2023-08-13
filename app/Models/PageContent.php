@@ -11,6 +11,8 @@ class PageContent extends Model
 
     protected $table = 'contents';
 
+    protected $primaryKey = 'idPageContent';
+
     protected $fillable = [
         'name',
         'positionX',
