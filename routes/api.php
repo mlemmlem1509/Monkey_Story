@@ -49,9 +49,3 @@ Route::post('contents', [PageContentController::class, 'create']);
 Route::get('contents/{id}', [PageContentController::class, 'view']);
 Route::put('contents/{id}/edit', [PageContentController::class, 'update']);
 Route::delete('contents/{id}/delete', [PageContentController::class, 'delete']);
-
-Route::post('login', [UserController::class, 'login']);
-Route::group(['middleware' => 'auth:sanctum'], function(){
-   Route::get('user', [UserController::class, 'detail']);
-   Route::get('logout', [UserController::class, 'logout']);
-});
