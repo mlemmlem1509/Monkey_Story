@@ -19,7 +19,8 @@ class AudioController extends Controller
     public function create(Request $request){
         $request->validate([
             'name' => 'required|max:1000',
-            'path' => 'required|max:1000'
+            'path' => 'required|max:1000',
+            'textID' => 'required|integer|min:1'
         ]);
         return $this->audioRepository->create($request->all());
     }
@@ -29,7 +30,8 @@ class AudioController extends Controller
     public function update(Request $request,$id){
         $request->validate([
             'name' => 'required|max:1000',
-            'path' => 'required|max:1000'
+            'path' => 'required|max:1000',
+            'textID' => 'required|integer|min:1'
         ]);
         return $this->audioRepository->update($id,$request->all());
     }

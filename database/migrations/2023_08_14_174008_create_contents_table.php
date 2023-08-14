@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('positionY');
             $table->integer('width');
             $table->integer('height');
-//            $table->foreignId('idPage')->constrained()->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreignId('idText')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('pageID');
+            $table->unsignedBigInteger('textID');
+            $table->foreign('pageID')->references('idPage')->on('pages');
+            $table->foreign('textID')->references('idText')->on('texts');
             $table->timestamps();
         });
     }

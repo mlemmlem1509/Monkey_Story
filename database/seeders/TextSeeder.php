@@ -17,7 +17,8 @@ class TextSeeder extends Seeder
         DB::table('texts')->insert([
             "name" => "Hello",
             "positionX" => "1000",
-            "positionY" => "2000"
+            "positionY" => "2000",
+            "pageID" => "1"
         ]);
     }
 }

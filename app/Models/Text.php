@@ -15,6 +15,7 @@ class Text extends Model
     protected $fillable = [
         'name',
         'positionX',
-        'positionY'
+        'positionY',
+        'pageID'
     ];
 }

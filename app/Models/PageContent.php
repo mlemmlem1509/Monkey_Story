@@ -18,6 +18,8 @@ class PageContent extends Model
         'positionX',
         'positionY',
         'width',
-        'height'
+        'height',
+        'pageID',
+        'textID'
     ];
 }

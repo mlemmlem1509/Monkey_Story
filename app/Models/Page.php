@@ -15,6 +15,7 @@ class Page extends Model
 
     protected $fillable = [
         'pageNumber',
-        'background'
+        'background',
+        'storyID'
     ];
 }

@@ -16,7 +16,8 @@ class PageSeeder extends Seeder
     {
         DB::table('pages')->insert([
             "pageNumber" => "1",
-            "background" => "mlemmlem"
+            "background" => "mlemmlem",
+            "storyID" => "1"
         ]);
     }
 }

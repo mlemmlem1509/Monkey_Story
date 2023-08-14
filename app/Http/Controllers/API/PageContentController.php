@@ -22,7 +22,9 @@ class PageContentController extends Controller
             'positionX' => 'required|integer|min:0',
             'positionY' => 'required|integer|min:0',
             'width' => 'required|integer|min:0',
-            'height' => 'required|integer|min:0'
+            'height' => 'required|integer|min:0',
+            'pageID' => 'required|integer|min:1',
+            'textID' => 'required|integer|min:1'
         ]);
         return $this->contentRepository->create($request->all());
     }
@@ -35,7 +37,9 @@ class PageContentController extends Controller
             'positionX' => 'required|integer|min:0',
             'positionY' => 'required|integer|min:0',
             'width' => 'required|integer|min:0',
-            'height' => 'required|integer|min:0'
+            'height' => 'required|integer|min:0',
+            'pageID' => 'required|integer|min:1',
+            'textID' => 'required|integer|min:1'
         ]);
         return $this->contentRepository->update($id,$request->all());
     }

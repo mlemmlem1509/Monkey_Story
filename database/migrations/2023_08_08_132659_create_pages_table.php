@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id('idPage');
             $table->integer('pageNumber');
             $table->string('background');
-//            $table->foreignId('idStory')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('storyID');
+            $table->foreign('storyID')->references('idStory')->on('stories') ;
             $table->timestamps();
         });
     }

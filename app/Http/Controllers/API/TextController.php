@@ -20,7 +20,8 @@ class TextController extends Controller
         $request->validate([
             'name' => 'required|max:1000',
             'positionX' => 'required|integer|min:0',
-            'positionY' => 'required|integer|min:0'
+            'positionY' => 'required|integer|min:0',
+            'pageID' => 'required|integer|min:1'
         ]);
         return $this->textRepository->create($request->all());
     }
@@ -31,7 +32,8 @@ class TextController extends Controller
         $request->validate([
             'name' => 'required|max:1000',
             'positionX' => 'required|integer|min:0',
-            'positionY' => 'required|integer|min:0'
+            'positionY' => 'required|integer|min:0',
+            'pageID' => 'required|integer|min:1'
         ]);
         return $this->textRepository->update($id,$request->all());
     }

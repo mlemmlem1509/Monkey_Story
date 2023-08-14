@@ -19,7 +19,9 @@ class PageContentSeeder extends Seeder
             "positionX" => "10",
             "positionY" => "20",
             "width" => "5",
-            "height" => "10"
+            "height" => "10",
+            "pageID" => "1",
+            "textID" => "1"
         ]);
     }
 }

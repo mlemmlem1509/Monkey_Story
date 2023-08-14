@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('positionX');
             $table->integer('positionY');
-//            $table->foreignId('idPage')->constrained()->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreignId('idPageContent')->constrained()->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreignId('idAudio')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('pageID');
+            $table->foreign('pageID')->references('idPage')->on('pages');
             $table->timestamps();
         });
     }

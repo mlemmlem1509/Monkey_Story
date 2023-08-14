@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->id('idImage');
+        Schema::create('audios', function (Blueprint $table) {
+            $table->id('idAudio');
             $table->string('name');
             $table->string('path');
-//            $table->foreignId('idPage')->constrained()->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreignId('idStory')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('textID');
+            $table->foreign('textID')->references('idText')->on('texts');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('audios');
     }
 };

@@ -19,7 +19,8 @@ class AudioSeeder extends Seeder
         foreach ($audios as $audio){
             DB::table('audios')->insert([
                 'name' => $audio,
-                'path' => $audioDir . "/" . $audio
+                'path' => $audioDir . "/" . $audio,
+                'textID' => "1"
             ]);
         }
     }
