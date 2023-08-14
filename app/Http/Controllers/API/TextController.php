@@ -17,12 +17,22 @@ class TextController extends Controller
         return $this->textRepository->all();
     }
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'positionX' => 'required|integer|min:0',
+            'positionY' => 'required|integer|min:0'
+        ]);
         return $this->textRepository->create($request->all());
     }
     public function view($id){
         return $this->textRepository->find($id);
     }
     public function update(Request $request,$id){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'positionX' => 'required|integer|min:0',
+            'positionY' => 'required|integer|min:0'
+        ]);
         return $this->textRepository->update($id,$request->all());
     }
     public  function delete($id){

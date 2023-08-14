@@ -18,12 +18,20 @@ class ImageController extends Controller
         return $this->imageRepository->all();
     }
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'path' => 'required|max:1000'
+        ]);
         return $this->imageRepository->create($request->all());
     }
     public function view($id){
         return $this->imageRepository->find($id);
     }
     public function update(Request $request,$id){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'path' => 'required|max:1000'
+        ]);
         return $this->imageRepository->update($id,$request->all());
     }
     public  function delete($id){

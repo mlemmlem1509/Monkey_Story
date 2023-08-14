@@ -17,12 +17,24 @@ class StoryController extends Controller
         return $this->storyRepository->all();
     }
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'authorName' => 'required|max:1000',
+            'illustratorName' => 'required|max:1000',
+            'thumbnail' => 'required|max:1000'
+        ]);
         return $this->storyRepository->create($request->all());
     }
     public function view($idStory){
         return $this->storyRepository->find($idStory);
     }
     public function update(Request $request,$idStory){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'authorName' => 'required|max:1000',
+            'illustratorName' => 'required|max:1000',
+            'thumbnail' => 'required|max:1000'
+        ]);
         return $this->storyRepository->update($idStory,$request->all());
     }
     public function delete($idStory){

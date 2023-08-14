@@ -17,12 +17,20 @@ class AudioController extends Controller
         return $this->audioRepository->all();
     }
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'path' => 'required|max:1000'
+        ]);
         return $this->audioRepository->create($request->all());
     }
     public function view($id){
         return $this->audioRepository->find($id);
     }
     public function update(Request $request,$id){
+        $request->validate([
+            'name' => 'required|max:1000',
+            'path' => 'required|max:1000'
+        ]);
         return $this->audioRepository->update($id,$request->all());
     }
     public  function delete($id){
