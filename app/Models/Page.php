@@ -33,7 +33,6 @@ class Page extends Model
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnly(['*']);
+        return LogOptions::defaults()->logAll();
     }
 }

@@ -29,8 +29,6 @@ class PageContent extends Model
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnly(['*'])
-            ->logOnlyDirty();
+        return LogOptions::defaults()->logAll();
     }
 }

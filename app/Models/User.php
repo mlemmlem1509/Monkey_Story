@@ -13,15 +13,13 @@ class User extends Authentication
 {
     use HasApiTokens, HasFactory, Notifiable, LogsActivity;
 
+    protected $table = 'users';
     protected $fillable = ['name', 'email', 'password'];
-
-    protected $hidden = ['password', 'remember_token'];
-
+    protected $hidden = ['password'];
     protected $casts = ['password' => 'hashed'];
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnlyDirty();
+        return LogOptions::defaults()->logAll();
     }
 }

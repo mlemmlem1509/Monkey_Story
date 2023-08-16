@@ -20,7 +20,6 @@ class Image extends Model
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnly(['*']);
+        return LogOptions::defaults()->logAll();
     }
 }
