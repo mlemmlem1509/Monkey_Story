@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id('idPage');
             $table->integer('pageNumber');
-            $table->string('background');
             $table->unsignedBigInteger('storyID');
-            $table->foreign('storyID')->references('idStory')->on('stories') ;
+            $table->unsignedBigInteger('imageID');
+            $table->foreign('storyID')->references('idStory')->on('stories');
+            $table->foreign('imageID')->references('idImage')->on('images');
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class Text extends Model
     protected $hidden = ['pageID'];
 
     public function pages():BelongsTo{
-        return $this -> belongsTo(Story::class,'storyID');
+        return $this -> belongsTo(Page::class,'pageID');
     }
     public function audio():HasOne{
         return $this -> hasOne(Audio::class);

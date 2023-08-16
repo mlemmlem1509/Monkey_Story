@@ -21,7 +21,7 @@ class StoryController extends Controller
             'name' => 'required|max:1000',
             'authorName' => 'required|max:1000',
             'illustratorName' => 'required|max:1000',
-            'thumbnail' => 'required|max:1000'
+            'imageID' => 'required|integer|min:1'
         ]);
         return $this->storyRepository->create($request->all());
     }
@@ -33,7 +33,7 @@ class StoryController extends Controller
             'name' => 'required|max:1000',
             'authorName' => 'required|max:1000',
             'illustratorName' => 'required|max:1000',
-            'thumbnail' => 'required|max:1000'
+            'imageID' => 'required|integer|min:1'
         ]);
         return $this->storyRepository->update($idStory,$request->all());
     }

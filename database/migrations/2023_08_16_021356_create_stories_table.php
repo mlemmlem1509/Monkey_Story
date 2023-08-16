@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('authorName');
             $table->string('illustratorName');
-            $table->string('thumbnail');
+            $table->unsignedBigInteger('imageID');
+            $table->foreign('imageID')->references('idImage')->on('images');
             $table->timestamps();
         });
     }
@@ -29,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('stories');
     }
 };
+

@@ -19,8 +19,8 @@ class PageController extends Controller
     public function create(Request $request){
         $request->validate([
             'pageNumber' => 'required|integer|min:1',
-            'background' => 'required|max:1000',
-            'storyID' => 'required|integer|min:1'
+            'storyID' => 'required|integer|min:1',
+            'imageID' => 'required|integer|min:1'
         ]);
         return $this->pageRepository->create($request->all());
     }
@@ -30,8 +30,8 @@ class PageController extends Controller
     public function update(Request $request,$id){
         $request->validate([
             'pageNumber' => 'required|integer|min:1',
-            'background' => 'required|max:1000',
-            'storyID' => 'required|integer|min:1'
+            'storyID' => 'required|integer|min:1',
+            'imageID' => 'required|integer|min:1'
         ]);
         return $this->pageRepository->update($id,$request->all());
     }

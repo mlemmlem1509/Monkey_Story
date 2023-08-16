@@ -18,7 +18,7 @@ class StorySeeder extends Seeder
             "name" => "Doraemon",
             "authorName" => "Fujiko.F.Fujio",
             "illustratorName" => "Fujiko.F.Fujio",
-            "thumbnail" => "mlem"
+            "imageID" => "1"
         ]);
     }
 }

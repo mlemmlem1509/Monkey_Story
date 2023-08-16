@@ -18,11 +18,14 @@ class Page extends Model
     public $incrementing = false;
     public $timestamps = true;
 
-    protected $fillable = ['pageNumber', 'background', 'storyID'];
-    protected $hidden = ['storyID'];
+    protected $fillable = ['pageNumber', 'storyID', 'imageID'];
+    protected $hidden = ['storyID', 'imageID'];
 
     public function story():BelongsTo{
         return $this -> belongsTo(Story::class,'storyID');
+    }
+    public function images():BelongsTo{
+        return $this -> belongsTo(Image::class,'imageID');
     }
     public function texts():HasMany{
         return $this -> hasMany(Text::class);
